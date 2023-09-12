@@ -1,4 +1,5 @@
 ### Homework 2   
+### Group 2: Wesley Ng, Dylan Suzuki, Reed Maniscalchi
 
 Definitions for the following terms:  
 
