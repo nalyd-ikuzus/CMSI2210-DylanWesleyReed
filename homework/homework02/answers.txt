@@ -1,0 +1,18 @@
+1. A computer system is a combination of hardware and software components 
+   that work together to perform various tasks.
+2. Central Processing Unit (CPU)
+   Memory (RAM & Storage)
+   Input & Output System (Keyboard & Mouse, Monitor)
+3. Compiled language is what a processor runs since it's pure binary, while 
+   interpreted language uses more abstract concepts to describe computations.
+4. Yes, C is a compiled language.
+5. The C programming language was invented by Dennis Ritchie 
+   (Credit: https://en.wikipedia.org/wiki/C_(programming_language))
+6. Since C was invented in the 1970s, its been in use for about 50 years
+   (Credit: https://en.wikipedia.org/wiki/C_(programming_language))
+7. Yes, it is
+8. Yes, it is
+9. the command "ls"
+10. it converts a string to a floating-point number
+    (Credit: https://www.tutorialspoint.com/c_standard_library/c_function_atof.htm)
+11. 
