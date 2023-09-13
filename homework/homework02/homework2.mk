@@ -49,7 +49,7 @@ Definitions for the following terms:
 >> 3. The ALU executes the instruction.
 
 13. What is the purpose of an ALU?
-> The purpose of an ALU is that it executes the decodedinstruction for the program to function.
+> The purpose of an ALU is that it decodes the instructions given to it using the instruction set architecture.
 
 14. What is a register?
 > A register holds program counters in the CPU that stores the instruction's addresses. 
