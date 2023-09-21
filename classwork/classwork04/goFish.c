@@ -1,35 +1,40 @@
 /**
-    * \file    goFish.c
-    * \brief   Report Generator Server (RGS) version
-    *           function source code
-    * \author  Original author ~ Dylan Suzuk 
-    * \date    Original date   ~ 20-Sep-2023
-    * \version 1.0   Initial release
-    * Project:
-    * \par
-    * Classwork 03
+* \file    goFish.c
+* \brief   Report Generator Server (RGS) version
+*           function source code
+* \author  Original author ~ Dylan Suzuk 
+* \date    Original date   ~ 20-Sep-2023
+* \version 1.0   Initial release
+* Project:
+* \par
+* Classwork 03
     
-    * Description:
-    * \par
-    * This program asks the user for up to 25 integers, stores them in an array,
-    * sums them, averages them, finds the number of sevens, and prints a string
-    * containing all entries.
-    *
-    */
+* Description:
+* \par
+* This program asks the user for up to 25 integers, stores them in an array,
+* sums them, averages them, finds the number of sevens, and prints a string
+* containing all entries.
+*
+*/
 
-   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    *  INCLUDE FILES (All other include-type stuff is in these files)
-    * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
-
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*  INCLUDE FILES (All other include-type stuff is in these files)
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+/*
+* Define constants
+*/
 #define MAX_ENTRIES 25
 #define SPECIAL_VALUE -9999
 
-
+/*
+* Main: Asks for up to 25 integers, stores them in an array,
+* sums them, averages them, finds the number of sevens, and makes a string
+* containing all entries.  It then prints all this information.
+*/
 int main( int argc, char * argv[] ) {
 
    char input[10];
@@ -57,7 +62,7 @@ int main( int argc, char * argv[] ) {
     sumOfEntries += atoi( storage[i] );
     if(atoi( storage[i] ) != 0 ){
         numOfEntries += 1;
-        storage[i][strcspn(storage[i], "\n")] = 0;
+        storage[i][strcspn(storage[i], "\n")] = 0; //took this from https://stackoverflow.com/questions/2693776/removing-trailing-newline-character-from-fgets-input 
         strcat( longString, storage[i] );
     }
     if(atoi( storage[i] ) == 7 ){
