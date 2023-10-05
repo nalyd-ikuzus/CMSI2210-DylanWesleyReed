@@ -1,0 +1,26 @@
+c0:         0x00000052
+c1:         0x00000041
+c2:         0x00000043
+c3:         0x00000069
+c4:         0x00000043
+c5:         0x00000041
+c6:         0x00000052
+parity:     0
+len:        7
+start:      LOAD            c0
+            SUB             c6
+            JGZ             end
+            JLZ             end
+            LOAD            c1
+            SUB             c5
+            JGZ             end
+            JLZ             end
+            LOAD            c2
+            SUB             c4
+            JGZ             end
+            JLZ             end
+            LOAD            parity
+            WRITE           1
+end:        
+
+

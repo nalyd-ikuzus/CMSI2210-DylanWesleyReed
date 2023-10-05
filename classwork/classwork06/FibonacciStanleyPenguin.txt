@@ -1,0 +1,27 @@
+n1:     0
+n2:     1
+count:  0
+temp:   0
+limit:  8
+start:  LOAD n1
+        WRITE 0xFF
+        LOAD n2
+        WRITE 0xFF
+top:    LOAD n1
+        ADD n2
+        STORE temp
+        WRITE 0xFF
+        LOAD n2
+        STORE n1
+        LOAD  temp
+        STOE n2
+        LOAD count
+        ADD 0x01
+        STORE count
+        SUB limit
+        JLZ top
+
+
+
+
+       

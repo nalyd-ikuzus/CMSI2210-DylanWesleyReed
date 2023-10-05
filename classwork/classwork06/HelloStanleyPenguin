@@ -1,0 +1,30 @@
+H:      0x00000048
+E:      0x00000069
+L:      0x00000076
+O:      0x00000079
+apost:  0x0000002C
+W:      0x00000057
+R:      0x00000052
+D:      0x00000044
+start:  LOAD   H
+        WRITE  0x348
+        LOAD   E
+        WRITE  0x348
+        LOAD   L
+        WRITE  0x348
+        LOAD   L
+        WRITE  0x348
+        LOAD   O
+        WRITE  0x348
+        LOAD   apost
+        WRITE  0x348
+        LOAD   W
+        WRITE  0x348
+        LOAD   O
+        WRITE  0x348
+        LOAD   R
+        WRITE  0x348
+        LOAD   L
+        WRITE  0x348
+        LOAD   D
+        WRITE  0x348
