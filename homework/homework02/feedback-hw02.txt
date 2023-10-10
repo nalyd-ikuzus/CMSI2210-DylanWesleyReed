@@ -1,0 +1,55 @@
+
+
+Evaluation Criteria ~ homework02
+CMSI 2210 Section 03 Fall 2023
+=================================
+
+BOOK PROBLEMS
+   Question 01    1/1 pt.
+   Question 02    1/1 pt.
+   Question 03    0/1 pt.  nope!
+   Question 04    1/1 pt.
+   Question 05    1/1 pt.
+   Question 06    1/1 pt.
+   Question 07    1/1 pt.
+   Question 08    1/1 pt.
+   Question 09    1/1 pt.
+   Question 10    1/1 pt.
+   Question 11    1/1 pt.
+   Question 12    1/1 pt.
+   Question 13  0.5/1 pt.  nope!
+   Question 14  0.5/1 pt.  nope!
+   Question 15    1/1 pt.
+   Question 16    1/1 pt.
+   Question 17    1/1 pt.
+   Question 18    1/1 pt.
+   Question 19    1/1 pt.
+   Question 20    1/1 pt.
+
+Total possible points 20
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 18/20 which is 90.0% which is an A-minus
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+On question #3, the difference has nothing to do with the operating system;
+instead, the difference is that in an interpreted language there is an
+application called an "interpreter" which translates the source code into
+machine instructions directly, line-by-line.  In a compiled language, there
+is an application called a "compiler" which translates the source code into
+machine code *all at once*, with the resulting machine code still needing to
+be "linked" with system libraries to make an *executable* which can then be
+run as a program.
+
+On question #13, not quite.  The ALU doesn't actually 'decode' instructions,
+it 'executes' them.
+
+On question #14, not quite.  A 'register' is a special area of memory that is
+built onto the processor to hold data.  The "program counter" is a register,
+but that is not the only register in the CPU.
+
+Excellent work ~ keep it up!
