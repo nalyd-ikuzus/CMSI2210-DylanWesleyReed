@@ -1,0 +1,11 @@
+1. X := A or (B and C)
+   Y := A nand (A nand C)
+
+2. C := (a1 and not-b1) or (not-(a1 xor b1) and a0 and not-b0)
+
+3. a) Clear all even numbered bits: AND 0xAAAAAAAA
+   b) Set the last three bits: OR 0x00000007
+   c) Compute the remainder when divided by 8: AND 0x00000007
+   d) Make the value -1: OR 0xFFFFFFFF
+   e) Complement the two highest order bits: XOR 0xC0000000
+   f) Compute the largest multiple of 8 less than or equal to the value itself: AND 0xFFFFFFF8
