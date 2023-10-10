@@ -1,0 +1,47 @@
+Problem 6: Write a stanley/penguin program that takes two inputs from port Ox100 and 
+finds their greatest common divisor.  Finally, output the result to port Ox200
+
+           JMP start
+in1:       00000000
+in2:       00000000
+div:       00000000
+start:     READ Ox100 #load in the two inputs and populate their variables
+           STORE in1
+           READ Ox100
+           STORE in2
+           LOAD in1
+           SUB in2 #compare the two variables and jump to their respective cases
+           JLZ case2 #if in2 is the greater number, jump to that case
+           JZ case3 #if they are the same number jump to that case
+           LOAD in2 #Case 1: in1 is the greater of the two numbers
+           STORE div
+case1Loop: LOAD div #loop through numbers (in2-1) -> 0 and if the number evenly divides in2, check if it evenly divides in1
+           SUB Ox01
+           LOAD in2
+           MOD div
+           JLZ case1Loop #if in2 MOD div is not 0, div does not evenly divide in2 and we go to the top of the loop
+           JGZ case1Loop
+           LOAD in1
+           MOD div
+           JLZ case1Loop #if in1 MOD div is not 0, div does not evenly divide in1 and we go to the top of the loop
+           JGZ case1Loop
+           JZ output #if we found the greatest common divisor, jump to the output section
+case2:     LOAD in1 #Case 2: in2 is the greater of the two numbers
+           STORE div
+case2Loop: LOAD div #loop through numbers (in1-1) -> 0 and if the number evenly divides in1, check if it evenly divides in1
+           SUB Ox01
+           LOAD in1
+           MOD div
+           JLZ case2Loop #if in1 MOD div is not 0, div does not evenly divide in1 and we go to the top of the loop
+           JGZ case2Loop
+           LOAD in2
+           MOD div
+           JLZ case2Loop #if in2 MOD div is not 0, div does not evenly divide in2 and we go to the top of the loop
+           JGZ case2Loop
+           JZ output #if we found the greatest common divisor, jump to the output section
+case3:     LOAD in1 #Case 3: in1 and in2 are the same number
+           STORE div
+           JMP output
+output:    LOAD div #load the greatest common divisor and write to Ox200
+           WRITE Ox200
+end:       JMP end

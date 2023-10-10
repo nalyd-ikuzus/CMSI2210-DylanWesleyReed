@@ -1,0 +1,12 @@
+Problem 7: Write a program that swaps the accumulator and memory address Ox30AA
+
+      JMP start
+tempA: 00000000
+tempM: 00000000
+start: STORE tempA
+       LOAD Ox30AA
+       STORE tempM
+       LOAD tempA
+       STORE Ox30AA
+       LOAD tempM
+end:   JMP end
