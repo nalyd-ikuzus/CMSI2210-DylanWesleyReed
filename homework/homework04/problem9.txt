@@ -1,0 +1,65 @@
+9. Part 1 of 2:
+   xor r8, r9
+   xor r9, r8
+   xor r8, r9
+
+   The instructions above, when executed, causes r8
+   and r9 to swap bit values with eachother. 
+
+   r8: 1100 --> 1010
+   r9: 0110
+
+   r9: 0110 --> 1100
+   r8: 1010
+
+   r8: 1010 --> 0110
+   r9: 1100
+
+   r8: 00111100
+   r9: 11110000
+
+   ----------------------------
+
+   Part 2 of 2:
+   This effect is possible because when we perform
+   the xor operator between r8 and r9, the resulting
+   bit will become (r8 ^ r9). If we do another
+   xor operator with an already existing bit, like
+   r8 ^ (r8 ^ r9), then we cancel that bit out, which
+   would be r8 from that example, resulting in r9.
+
+   Essentially is what happened:
+   "r8" = r8 ^ r9
+   "r9" = r9 ^ (r8 ^ r9) == r8
+   "r8" = (r8 ^ r9) ^ r8 == r9
+
+    Theorems of XOR:
+    X xor Y = Z
+    Y = Z xor X
+    X = Z xor Y
+    
+    Proof Through Equivalences:
+    (x ^ y) ^ x ==
+    ((!x & y) | (x & !y)) ^ x ==                                            (Definition of xor)
+    (((!x & y) | (x & !y)) & !x) | (!((!x & y) | (x & !y)) & x) ==          (Definition of xor)
+    (((!x & y) | (x & !y)) & !x) | ((!(!x & y) & !(x & !y)) & x) ==         (DeMorgan's Law)
+    (((!x & y) | (x & !y)) & !x) | (((x | !y) & (!x | y)) & x) ==           (DeMorgan's Law)
+    (((!x & y) | (x & !y)) & !x) | (((x | !y) & (y)) & x) ==                
+    (!x & y & !x) | (((x | !y) & (y)) & x) ==                               
+    (!x & y) | (((x | !y) & (y)) & x) ==
+    (!x & y) | (x & y & x) ==
+    (!x & y) | (x & y) ==  
+    y & (!x ^ x) ==                                                         (Distributive Law)
+    y & T ==
+    y
+
+    Truth Tables:
+     X  Y  |  X ^ Y  |  X ^ (X ^ Y)  | Y ^ (X ^ Y)
+    -----------------------------------------------
+     0  0  |    0    |       0       |      0
+     0  1  |    1    |       1       |      0
+     1  0  |    1    |       0       |      1
+     1  1  |    0    |       1       |      1
+
+
+
