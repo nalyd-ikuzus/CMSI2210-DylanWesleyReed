@@ -112,6 +112,9 @@ int main( int argc, char * argv[] ) {
    */
 
   for(int i = 0; i < copyCount; i++){
+   fseek(in, 0, SEEK_SET);
+   char* buffer[101];
+   fgets(buffer, 100, in);
    for(int j = 0; j < blocksize; j++){
       char* currentLine[101];
       fgets(currentLine, 100, in);
