@@ -82,26 +82,42 @@ int main( int argc, char * argv[] ) {
    * open the input file and check open error
    */
 
-      FILE* in = fopen( argv[1], "r" );
-      if( !in ) {
-         printf( "File %s does not exist\n", argv[1] );
-         return 2;
-      }
-      FILE* out = fopen( argv[2], "w" );
+   FILE* in = fopen( filename, "r" );
+   if( !in ) {
+      printf( "File %s does not exist\n", argv[1] );
+      return 2;
+   }
       
 
   /*
    * read the first line of the input file to get the readline count
    */
+  char* buffer[101];
+  fgets(buffer, 100, in);
+  blocksize = atoi(buffer);
 
   /*
    * open the output file and check open error
    */
 
+  FILE* out = fopen( "output.txt", "w" );
+  if( !out ) {
+   printf( "File 'output.txt' could not be opened");
+   return 2;
+  }
+
   /*
    * read that many lines from the input file and
    *  write them to the output file
    */
+
+  for(int i = 0; i < copyCount; i++){
+   for(int j = 0; j < blocksize; j++){
+      char* currentLine[101];
+      fgets(currentLine, 100, in);
+      fputs(currentLine, out);
+   }
+  }
 
   /*
    * clean up after yourself
