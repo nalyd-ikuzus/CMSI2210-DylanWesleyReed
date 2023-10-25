@@ -1,0 +1,67 @@
+
+
+Evaluation Criteria ~ homework04
+CMSI 2210 Section 03 Fall 2023
+=================================
+
+LOGIC DESIGN
+   Logic Question 1a          5 pts.
+   Logic Question 1b          3 pts.
+   Logic Question 2           5 pts.
+
+REGISTER OPERATIONS
+   Register clear even        2 pts.
+   Register set last 3        2 pts.
+   Reg./8 remainder           2 pts.
+   Reg. set to -1             2 pts.
+   Reg. invert 2 MSBs         2 pts.
+   Register computation       2 pts.
+
+STANLEY/PENGUIN ASSEMBLY
+   Q4 - program 1a           11 pts.
+   Q5 - program 1b           11 pts.
+   Q6 - GCD prog.            11 pts.
+   Q7 - swap frag             5 pts.
+   Q8 - jmp to addr           5 pts.
+
+REGISTER INVESTIGATION
+   Q9a - high level expl.     5 pts.
+   Q9b - Why?                 5 pts.
+
+
+Total possible points        90 points
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 78.0/ 90.0 which is 86.67% which is a B
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+On problem 1a and 1b, you need four equations, two for X and two for Y.
+   problem 1a for Y should be Y := A OR C
+   problem 1b for X should be X := A NAND (C NAND C)
+
+On problem 2, I think the equation works, but where is the diagram?
+
+On problem 6, I think the code works, but check out Euclid's algorithm to
+see something much simpler using the MOD operator ~ remember that DIV
+give you the quotient, not the remainder....
+
+On problem 7, this will work fine, but you didn't need the entire program,
+only the swapping fragment.
+
+Otherwise, a very good job!
+
+========================================================
+SEMESTER SCORE SO FAR:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~  90.00% of  5 points =  4.50 points
+   homework03 ~  97.78% of  5 points =  4.89 points
+   homework04 ~  86.67% of  5 points =  4.33 points
+                                total: 18.72 out of 20.0 = 93.62%
+                                which is a solid A
+
+Keep up the good work!
