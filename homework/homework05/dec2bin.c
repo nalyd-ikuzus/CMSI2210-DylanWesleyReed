@@ -10,29 +10,40 @@
 
 #define MAX_INPUT_LENGTH 11
 #define MAX_OUTPUT_LENGTH 33
-#define MAX_DEC10_RANGE 4294967295
+#define MAX_DEC10_RANGE 4294967295u
+
+int isValidInput(char[]);
+void unsignedDecimalToBinary(unsigned int, char[]);
 
 int main(int argc, char *argv[])
 {
-    char input[] = argv[1];
-    if (argc != 3)
+    if (argc == 1)
     {
-        puts("Exactly two command line arguments needed");
+        puts("To execute this file: dec2bin.c [int]");
         return 1;
     }
-    else if (!isValidInput(input))
+
+    char input[MAX_INPUT_LENGTH];
+    strcpy(input, argv[1]);
+
+    if (argc != 2)
     {
-        puts("Input must only contain digit characters.");
-        puts("Do not use \".\" or \"-\" characters");
+        puts("Exactly two command line arguments needed");
         return 2;
     }
-
-    int dec10 = atoi(input);
-
-    if (dec10 >= MAX_DEC10_RANGE)
+    else if (isValidInput(input) == 0)
     {
-        puts("Number is too high! Input a number smaller than %d", MAX_DEC10_RANGE);
+        puts("\nInput must only contain digit characters.");
+        puts("Do not use \".\" or \"-\" characters");
         return 3;
+    }
+
+    unsigned int dec10 = atol(input);
+
+    if (sizeof(input) > MAX_INPUT_LENGTH || dec10 > MAX_DEC10_RANGE)
+    {
+        puts(("Number is too high! Input a number smaller than 4294967295"));
+        return 4;
     }
 
     char binaryNum[MAX_OUTPUT_LENGTH];
@@ -41,9 +52,8 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-int isValidInput(char input[])
+int isValidInput(char *input)
 {
-
     /*
         Checks if the input contains only integers.
 
@@ -56,7 +66,7 @@ int isValidInput(char input[])
                 one charater that is not an integer. This
                 includes "-" or "." .
     */
-    for (int i = 0; i < MAX_INPUT_LENGTH - 1; i++)
+    for (int i = 0; i < MAX_INPUT_LENGTH - 1 && input[i] != '\0'; i++)
     {
         if (!isdigit(input[i]))
         {
@@ -66,7 +76,7 @@ int isValidInput(char input[])
     return 1;
 }
 
-void unsignedDecimalToBinary(int num, char *binaryNum[])
+void unsignedDecimalToBinary(unsigned num, char *binaryNum)
 {
     /*
         Converts unisigned decimal to binary numbers as a string.
@@ -80,6 +90,11 @@ void unsignedDecimalToBinary(int num, char *binaryNum[])
     // Converting using Top-Down Division Approach.
     int index = 0;
 
+    for (int i = 0; i < MAX_OUTPUT_LENGTH - 1; i++)
+    {
+        binaryNum[i] = '0';
+    }
+
     while (num != 0)
     {
         if (num % 2 == 1)
@@ -92,21 +107,16 @@ void unsignedDecimalToBinary(int num, char *binaryNum[])
         }
 
         num /= 2;
-        index++;
+        index = index + 1;
     }
 
-    // 1110 0000 0000 0000 0000 0000 0000 0000
+    // Reverses the binary number.
+    for (int i = 0; i < (MAX_OUTPUT_LENGTH - 1) / 2; i++)
+    {
+        binaryNum[i] ^= binaryNum[MAX_OUTPUT_LENGTH - 2 - i];
+        binaryNum[MAX_OUTPUT_LENGTH - 2 - i] ^= binaryNum[i];
+        binaryNum[i] ^= binaryNum[MAX_OUTPUT_LENGTH - 2 - i];
+    }
 
-    // Shifts the binary number to the right based on the index number.
-    int gapDistance = MAX_OUTPUT_LENGTH - index - 1;
-    if (gapDistance == 0)
-    {
-        return;
-    }
-    while (index > 0)
-    {
-        index--;
-        binaryNum[index + gapDistance] = binaryNum[index];
-        binaryNum[index] = '0';
-    }
+    binaryNum[MAX_OUTPUT_LENGTH - 1] = '\0';
 }
