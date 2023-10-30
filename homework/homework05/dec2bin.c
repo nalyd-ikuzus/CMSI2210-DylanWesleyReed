@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
     if (argc != 2)
     {
-        puts("Exactly two command line arguments needed");
+        puts("Exactly one command line arguments needed");
         return 2;
     }
     else if (isValidInput(input) == 0)
