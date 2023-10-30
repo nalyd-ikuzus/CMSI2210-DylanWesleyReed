@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 {
     if (argc == 1)
     {
-        puts("To execute this file: dec2bin.c [int]");
+        puts("To execute this file: dec2bin.exe [int]");
         return 1;
     }
 
