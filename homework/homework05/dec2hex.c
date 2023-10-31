@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 {
     if (argc == 1)
     {
-        puts("To execute this file: dec2hex.exe [Unsigned Integer: 0 to MAX_DEC10_RANGE] [32 or 64]");
+        puts("\nTo execute this file: dec2hex.exe [Unsigned Integer: 0 to MAX_DEC10_RANGE] [32 or 64]");
         return 1;
     }
 
@@ -36,13 +36,13 @@ int main(int argc, char *argv[])
 
     if (argc != 3)
     {
-        puts("Exactly two command line arguments needed.");
-        puts("To execute this file: dec2hex.exe [Unsigned Integer: 0 to 4294967295 or 0 to 18446744073709551615] [32 or 64]");
+        puts("\nExactly two command line arguments needed.");
+        puts("\nTo execute this file: dec2hex.exe [Unsigned Integer: 0 to 4294967295 or 0 to 18446744073709551615] [32 or 64]");
         return 2;
     }
     else if (isValidBitInput(argv[2]) == 0)
     {
-        puts("Second argument must be either 32 or 64.");
+        puts("\nSecond argument must be either 32 or 64.");
         return 3;
     }
 
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 
     if (isValidDec10Input(input) == 0)
     {
-        puts("First argument must only contain digit characters.");
+        puts("\nFirst argument must only contain digit characters.");
         puts("Do not use \".\" or \"-\" characters.");
         return 4;
     }
@@ -61,11 +61,11 @@ int main(int argc, char *argv[])
     {
         if (bits == 32)
         {
-            puts("Number is too high! Input a number smaller than 4294967296.");
+            puts("\nNumber is too high! Input a number smaller than 4294967296.");
         }
         else
         {
-            puts("Number is too high! Input a number smaller than 18446744073709551616.");
+            puts("\nNumber is too high! Input a number smaller than 18446744073709551616.");
         }
         return 5;
     }
