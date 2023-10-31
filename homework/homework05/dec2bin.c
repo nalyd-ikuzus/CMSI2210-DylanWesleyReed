@@ -13,13 +13,14 @@
 #define MAX_DEC10_RANGE 4294967295u
 
 int isValidInput(char[]);
+short isGreaterThan(unsigned int, char[]);
 void unsignedDecimalToBinary(unsigned int, char[]);
 
 int main(int argc, char *argv[])
 {
     if (argc == 1)
     {
-        puts("To execute this file: dec2bin.exe [int]");
+        puts("\nTo execute this file: dec2bin.exe [int]");
         return 1;
     }
 
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
 
     if (argc != 2)
     {
-        puts("Exactly one command line arguments needed");
+        puts("\nExactly one command line arguments needed");
         return 2;
     }
     else if (isValidInput(input) == 0)
@@ -40,9 +41,9 @@ int main(int argc, char *argv[])
 
     unsigned int dec10 = atol(input);
 
-    if (sizeof(input) > MAX_INPUT_LENGTH || dec10 > MAX_DEC10_RANGE)
+    if (isGreaterThan(MAX_DEC10_RANGE, input) == 0)
     {
-        puts(("Number is too high! Input a number smaller than 4294967295"));
+        puts(("\nNumber is too high! Input a number smaller than 4294967295"));
         return 4;
     }
 
@@ -74,6 +75,54 @@ int isValidInput(char *input)
         }
     }
     return 1;
+}
+
+short isGreaterThan(unsigned int num, char *input)
+{
+    /*
+        Checks if the num is greater than the string representation of a number.
+        Parameters:
+            num:
+                The unsigned decimal representation of a number.
+            input:
+                The user's number in string representation.
+        Returns:
+            1 if the num > input
+            0 otherwise.
+
+    */
+
+    int size = 0;
+    while (input[size] != '\0')
+    {
+        size++;
+    }
+    size++;
+
+    if (size > MAX_INPUT_LENGTH)
+    {
+        return 0;
+    }
+    else if (size < MAX_INPUT_LENGTH)
+    {
+        return 1;
+    }
+
+    short boolVal = 1;
+    for (int i = MAX_INPUT_LENGTH - 2; i >= 0; i--)
+    {
+        if (num % 10 < input[i] - 48)
+        {
+            boolVal = 0;
+        }
+        else if (num % 10 > input[i] - 48)
+        {
+            boolVal = 1;
+        }
+        num /= 10;
+    }
+
+    return boolVal;
 }
 
 void unsignedDecimalToBinary(unsigned num, char *binaryNum)
