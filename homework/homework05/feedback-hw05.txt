@@ -1,0 +1,54 @@
+
+
+Evaluation Criteria ~ homework05
+CMSI 2210 Section 03 Fall 2023
+=================================
+
+dec2bin
+   compiles       [ 5 pts.]      5 points earned
+   error checks   [ 5 pts.]      5 points earned
+   runs  tests    [10 pts.]     10 points earned
+dec2hex
+   compiles       [ 5 pts.]      5 points earned
+   error checks   [ 5 pts.]      5 points earned
+   32-bit tests   [ 5 pts.]      5 points earned
+   64-bit tests   [ 5 pts.]      5 points earned
+timesTables
+   compiles       [ 5 pts.]      5 points earned
+   error checks   [ 5 pts.]      5 points earned
+   runs  tests    [10 pts.]     10 points earned
+holdit
+   compiles       [ 5 pts.]      5 points earned
+   runs tests     [15 pts.]     15 points earned
+wordcount
+   compiles       [ 5 pts.]      5 points earned
+   error checks   [ 5 pts.]      5 points earned
+   runs tests     [10 pts.]     10 points earned
+
+ Total possible ~ 100 points
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 100/100 which is 100.00% which is an A-plus
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+Well done!  Everything works as advertised.
+
+Nice work doing 'pound-defines' and using functions which you declared at
+   the top of the files.  Very professional!
+
+========================================================
+SEMESTER SCORE SO FAR:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~  90.00% of  5 points =  4.50 points
+   homework03 ~  97.78% of  5 points =  4.89 points
+   homework04 ~  86.67% of  5 points =  4.33 points
+   homework05 ~ 100.00% of 10 points = 10.00 points
+                                total: 28.72 out of 30.00 = 95.73%
+                                which is an A
+
+Keep up the good work, gentlemen!
