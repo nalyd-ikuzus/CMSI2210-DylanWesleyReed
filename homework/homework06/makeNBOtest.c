@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-int makeNBO(int);
+unsigned int makeNBO(int);
 
 int main()
 {
@@ -12,8 +12,8 @@ int main()
     */
 
     // Test for making sure that the signed numbers switch properly.
-    assert(makeNBO(240) == -268435456);
-    assert(makeNBO(-268435456) == 240);
+    assert(makeNBO(240) == 4026531840u);
+    assert(makeNBO(4026531840u) == 240);
 
     // Test to see for palindromatic bytes, the number does not change.
     assert(makeNBO(-572662307) == -572662307);

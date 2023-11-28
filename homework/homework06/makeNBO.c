@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 int whichEndIsUp();
-int makeNBO(int);
+unsigned int makeNBO(unsigned int);
 
-int makeNBO(int number)
+unsigned int makeNBO(unsigned int number)
 {
     /*
         Method that reverses the byte order of number. For
@@ -28,7 +28,7 @@ int makeNBO(int number)
         return number;
     }
 
-    int reverse = 0;
+    unsigned int reverse = 0;
     int byteIndex = 3;
 
     for (unsigned int num = number; num > 0; num /= 256)
