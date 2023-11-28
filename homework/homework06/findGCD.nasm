@@ -1,5 +1,5 @@
 ; -----------------------------------------------------------------------------
-;  findGCD function in 'nasm'
+;  findGCD program in 'nasm'
 ;     to assemble:   nasm -f macho64 findGCD.nasm
 ; -----------------------------------------------------------------------------
 
@@ -15,7 +15,7 @@
 _main:     push   rbx            ; we have to push this to keep the os happy
 
 
-prompt1:   xor    rax, rax  
+prompt1:   xor    rax, rax       ; print out first prompt
            mov    rdi, str_form
            mov    rsi, input1str
            call   _printf
