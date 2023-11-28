@@ -11,7 +11,7 @@ int main()
         of makeNBO.c.
     */
 
-    // Test for making sure that the signed numbers switch properly.
+    // Test for making sure that the end bytes switch properly.
     assert(makeNBO(240) == 4026531840u);
     assert(makeNBO(4026531840u) == 240);
 
