@@ -15,36 +15,35 @@
                 segment .text
 
 _paritygen:   push   rbx            ; we have to push this to keep the os happy
-              mov    r8, rdi
-              xor    r10, r10
-              ;mov    r8, 0x0F
-              mov    r9, r8
-              mov    r11, 8
-anding:       dec    r11
-              cmp    r11, 0x00
-              je     checkP
-              mov    r8, r9
-              and    r8, 0x01
-              shr    r9, 1
-              cmp    r8, 0x01
-              je     increment
-              jne    anding
+              mov    r8, rdi        ; grab the function argument and put it into r8
+              xor    r10, r10       ; initialize 'one' counter 
+              mov    r9, r8         ; make a copy of r8 so that we can AND r8
+              mov    r11, 8         ; initialize loop counter
+anding:       dec    r11            ; START OF ANDING LOOP: update counter
+              cmp    r11, 0x00      ; check counter status
+              je     checkP         ; if the loop counter is zero, we're done
+              mov    r8, r9         ; reset r8 to the current bitstring
+              and    r8, 0x01       ; isolate the least significant digit
+              shr    r9, 1          ; bitshift r9 to queue up the next digit
+              cmp    r8, 0x01       ; compare our ANDed number to 1
+              je     increment      ; if the current digit is a 1, jump to increment
+              jne    anding         ; if not, move on to the next iteration
 
-increment:    inc    r10
-              jmp    anding
+increment:    inc    r10            ; increment the 'one' counter
+              jmp    anding         ; jump back into the loop
 
-checkP:       xor    rdx, rdx
-              mov    rax, r10
-              mov    r8,  2
-              idiv   r8
-afterDiv:     cmp    rdx, 0x00
-              je     even
-              jne    odd
+checkP:       xor    rdx, rdx       ; clear rdx (just kinda needs to happen for idiv-ing)
+              mov    rax, r10       ; move 'one' counter into rax so we can idiv it
+              mov    r8,  2         ; move the value of 2 into r8
+              idiv   r8             ; idiv 'one' counter by 2
+afterDiv:     cmp    rdx, 0x00      ; check the remainder
+              je     even           ; if 'one' counter mod 2 is 0: there are an even number of ones
+              jne    odd            ; otherwise there are an odd number of ones
 
-even:         mov    rax, 0x01
-jumping:      jmp    end
+even:         mov    rax, 0x01      ; if there are an even number of ones, we return a one
+jumping:      jmp    end            ; jump to end
 
-odd:          mov    rax, 0x00
+odd:          mov    rax, 0x00      ; if there are an odd number of ones, we return a zero
 
-end:          pop    rbx
-              ret
+end:          pop    rbx            ; restore the base pointer
+              ret                   ; return and we're done
