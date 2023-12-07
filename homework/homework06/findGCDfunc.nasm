@@ -1,5 +1,5 @@
 ; -----------------------------------------------------------------------------
-;  findGCD function in 'nasm' for use in a C file.
+;  findGCD function in 'nasm' for use in a C file.  Presumably only runs on intel-based macOS
 ;     to assemble:   nasm -f macho64 findGCD.nasm
 ; -----------------------------------------------------------------------------
 

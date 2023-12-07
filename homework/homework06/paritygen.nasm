@@ -1,6 +1,7 @@
 ; -----------------------------------------------------------------------------
-;  paritygen program in 'nasm' -> essentially simulates the parity flag
+;  paritygen program in 'nasm' -> essentially simulates the parity flag.  Presumably only runs on intel-based macOS
 ;     to assemble:   nasm -f macho64 paritygen.nasm
+;     to link: gcc paritygen.o -o paritygen
 ; -----------------------------------------------------------------------------
 
 ; Plan:

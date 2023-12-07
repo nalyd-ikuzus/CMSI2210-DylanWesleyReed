@@ -1,3 +1,7 @@
+/*
+To Compile and Link: gcc gcdFinder.c findGCDfunc.o -o gcdFinder
+*/
+
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
