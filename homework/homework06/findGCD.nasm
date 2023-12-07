@@ -1,5 +1,5 @@
 ; -----------------------------------------------------------------------------
-;  findGCD program in 'nasm'
+;  findGCD program in 'nasm' Presumably only runs on intel-based macOS
 ;     to assemble:   nasm -f macho64 findGCD.nasm
 ;     to link:  gcc findGCD.o -o findGCD
 ; -----------------------------------------------------------------------------
