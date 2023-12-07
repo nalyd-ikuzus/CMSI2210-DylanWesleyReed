@@ -1,3 +1,13 @@
+/*
+    MAIN PROGRAM: A test file that runs assertions to check makNBOC's correctness
+
+    filename: makeNBOtest.c
+
+    Compile and link: gcc makeNBOtest.c -o makeNBOtest
+    Compile only: gcc -c makeNBOtest.c
+    Link: gcc makeNBOtest.c makeNBOC.c whichEndIsUp.o -o makeNBOtest
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>

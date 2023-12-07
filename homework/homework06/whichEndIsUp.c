@@ -1,3 +1,12 @@
+/*
+    Short program to tell if your computer is Big Endian or Little Endian
+
+    filename: whichEndIsUp.c
+
+    Compile and link: gcc whichEndIsUp.c -o whichEndIsUp
+    Compile only: gcc -c whichEndIsUp.c
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 

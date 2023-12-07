@@ -1,3 +1,12 @@
+/*
+    Short program to tell if your computer is Big Endian or Little Endian
+
+    filename: makeNBOC.c
+
+    Compile and link: gcc makeNBOC.c -o makeNBOC
+    Compile only: gcc -c makeNBOC.c
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 

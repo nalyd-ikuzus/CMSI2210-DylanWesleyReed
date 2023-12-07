@@ -3,9 +3,9 @@
    ;
    ; This is a Win32 console progam tests the correctness of makeNBO.c
    ;
-   ;  to assemble for windows:         nasm -f win32 makeNBO.nasm
-   ;  to link for win32 under win64:   gcc -m32 makeNBO.obj -o makeNBO.exe
-   ;  to link for gdb for win32:       gcc -gdb -m32 makeNBO.obj -o makeNBO.exe
+   ;  to assemble for windows:         nasm -f win32 makeNBON.nasm
+   ;  to link for win32 under win64:   gcc -m32 makeNBON.obj makeNBOC.c whichEndIsUp.o -o makeNBO.exe
+   ;  to link for gdb for win32:       gcc -gdb -m32 makeNBON.obj makeNBOC.c whichEndIsUp.o -o makeNBO.exe
    ;----------------------------------------------------------------------------
 
                global   _main
