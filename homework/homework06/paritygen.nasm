@@ -1,6 +1,7 @@
 ; -----------------------------------------------------------------------------
 ;  paritygen program in 'nasm' -> essentially simulates the parity flag
 ;     to assemble:   nasm -f macho64 paritygen.nasm
+;     to link: gcc paritygen.o -o paritygen
 ; -----------------------------------------------------------------------------
 
 ; Plan:

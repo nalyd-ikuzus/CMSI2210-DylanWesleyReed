@@ -1,6 +1,7 @@
 ; -----------------------------------------------------------------------------
 ;  findGCD program in 'nasm'
 ;     to assemble:   nasm -f macho64 findGCD.nasm
+;     to link:  gcc findGCD.o -o findGCD
 ; -----------------------------------------------------------------------------
 
            global  _main
