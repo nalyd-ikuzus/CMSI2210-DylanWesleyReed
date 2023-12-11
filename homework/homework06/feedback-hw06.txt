@@ -1,0 +1,80 @@
+
+
+Evaluation Criteria ~ homework06
+CMSI 2210 Section all Fall 2023
+=================================
+
+FINDGCD.NASM
+   nasm file assembles  [5 pts.]
+   nasm runs            [5 pts.]
+   output correct       [3 pts.]
+GCDFINDER
+   nasm file assembles  [5 pts.]
+   gcdFinder.c compiles [5 pts.]
+   link both files OK   [5 pts.]
+   nasm returns value   [5 pts.]
+   output correct       [3 pts.]
+PARITYGEN
+   nasm file assembles  [5 pts.]
+   nasm runs            [5 pts.]
+   output correct       [3 pts.]
+WHICHENDISUP
+   compiles no errors   [5 pts.]
+   runs no errors       [3 pts.]
+MAKENBOC.C
+   compiles no errors   [5 pts.]
+   uses previous func.  [5 pts.]
+   tester compiles      [5 pts.]
+   tester runs          [5 pts.]
+   output correct       [3 pts.]
+MAKENBO.NASM
+   nasm file assembles  [5 pts.]
+   link all files OK    [5 pts.]
+   calls "C" function   [5 pts.]
+   output correct       [3 pts.]
+
+Total possible points 100
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 98.00/100.00 which is 98% which is an A-plus
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+problem 1 findGCD.nasm: assembles fine.  I had to add the "-fno-pie" option
+   to the gcc linker line, but even though it gave me a warning the program
+   runs fine.  Excellent!
+
+problem 2 findGCDfunc.nasm & gcdFinder.c: perfect, except the commands in
+   the file header aren't QUITE right... I fingered it out though....
+
+problem 3 partiygen.nasm: perfect!  VERY nice work here showing the various
+   values...
+
+problem 4 whichEndIsUp.c: the function compiles, but this was supposed to be
+   a program AND a function.  I can see from the code that the function will
+   work, but it won't run as it is.
+
+problem 5 makeNBOC.c & makeNBOCtest.c: perfect!  Nice work.
+
+problem 6 makeNBOC.c & makeNBON.nasmproblem: again, perfection!
+
+========================================================
+SEMESTER HOMEWORK TOTALS:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~  90.00% of  5 points =  4.50 points
+   homework03 ~  97.78% of  5 points =  4.89 points
+   homework04 ~  86.67% of  5 points =  4.33 points
+   homework05 ~ 100.00% of 10 points = 10.00 points
+   homework06 ~  98.00% of 15 points = 14.70 points
+                       semester total: 43.42 out of 45.00 = 96.49%
+                             which is an A
+
+Great work on this and all these assignments!  It's been a pleasure having
+all of you in class and I look forward to seeing you in other classes and in
+the Keck Lab next semester.  You three all truly understand this material
+and worked hard on it!  Have a wonderful holiday...
+
